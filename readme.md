@@ -1298,7 +1298,7 @@ Note: This explanation covers the basic concept of mapped types in TypeScript. T
 
 <h1 align="center">-END-</h1>
 
-# Object-Oriented Programming in typescript
+# Module 4: Object-Oriented Programming in typescript
 
 ## 4-1: Introduction to Object-Oriented Programming
 
