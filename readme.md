@@ -2,9 +2,7 @@
 
 Type Script installation:
 
-```sh
-npm install typescript
-```
+`sh npm install typescript`
 
 Global installation:
 
@@ -12,7 +10,9 @@ Global installation:
 
 nvm installation:
 
-`sh npm install -g nvm`
+```sh npm install -g nvm
+
+```
 
 ### How to change node version in your local compute
 
@@ -20,40 +20,43 @@ nvm use node 19.8.2 ( type your version )
 
 ### Typescript file run local computer
 
-`sh tsc index.js` ( file name )
+````sh tsc index.js
+``` ( file name )
 
 ### Every time a file run updated
 
-- setup node package manager:`npm init -y`
-- `sh npm i nodemon`
+- setup node package manager:```sh npm init -y ```
+- ```sh npm i nodemon
+````
+
 - `“start”: “nodemon index.js”`
 
 ### কিভাবে typescript এর ফাইল javascript এ complied না করে node এ চালাতে পারি ?
 
 - আমরা এক্ষেত্রে ব্যাবহার করতে পারিঃ node js এর একটি প্যাকেজ ম্যানেজার সেটি হচ্ছেঃ
 
-1.  `npm i ts-node-dev`  
+1.  `sh npm i ts-node-dev`  
     or
-2.  `npm i ts-node-dev --save-dev`
+2.  `shnpm i ts-node-dev --save-dev`
 
 - এর পরের কাজ হচ্ছে, আমাদের যেখানে স্টার্ট করার command টি দেওয়া রয়েছে সেখানে,
 
-- `ts-node-dev --respawn --transpile-only index.ts`
+- `shts-node-dev --respawn --transpile-only index.ts`
 
-- setup node package manager: `npm init -y`
-- `npm i nodemon`
-- `“start”: “nodemon index.js”`
+- setup node package manager: `sh npm init -y`
+- ```sh npm i nodemon`
+- `sh “start”: “nodemon index.js”`
 
 ### কিভাবে typescript এর ফাইল javascript এ complied না করে node এ চালাতে পারি ।
 
 আমরা এক্ষেত্রে ব্যাবহার করতে পারিঃ node js এর একটি প্যাকেজ ম্যানেজার সেটি হচ্ছেঃ
 
-- `npm i ts-node-dev` or `npm i ts-node-dev --save-dev`
+- `sh npm i ts-node-dev` or `sh npm i ts-node-dev --save-dev`
 
 এর পরের কাজ হচ্ছে, আমাদের যেখানে স্টার্ট করার command টি দেওয়া রয়েছে সেখানে,
 
-- `ts-node-dev --respawn --transpile-only index.ts`
-- `"start": "ts-node-dev --respawn --transpile-only server.ts”,`
+- `sh ts-node-dev --respawn --transpile-only index.ts`
+- `sh "start": "ts-node-dev --respawn --transpile-only server.ts”,`
 
 এটাকে রিপ্লেছ করে দিলেই হবে।
 
