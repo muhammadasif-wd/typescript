@@ -997,6 +997,10 @@ In this example, we are using the nullish coalescing operator to provide a defau
 
 In this blog post, we discussed the ternary operator and the nullish coalescing operator in TypeScript. These operators can help us write more concise and readable code. The ternary operator allows us to write a shorthand if statement, and the nullish coalescing operator allows us to provide a default value for variables that are `null` or `undefined`.
 
+<h1 align="center">-END-</h1>
+
+# Module-3: Explore Advance Types of Typescript
+
 ## 3-1: Type Assertion
 
 Type assertion is a way to tell the TypeScript compiler that a variable is of a specific type. It is like a type cast in other languages. There are two ways to do type assertion in TypeScript:
