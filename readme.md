@@ -1292,4 +1292,4 @@ Mapped types are versatile and can be used in various scenarios to manipulate an
 
 Note: This explanation covers the basic concept of mapped types in TypeScript. The language evolves over time, so there may be additional features or changes introduced beyond my knowledge cutoff in September 2021. It's always a good idea to consult the official TypeScript documentation for the most up-to-date information.
 
-<h1 align="center">---END---</h1>
+<h1 align="center">-->END--></h1>
