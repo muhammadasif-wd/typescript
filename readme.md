@@ -101,7 +101,7 @@ or
 এর পরের কাজ হচ্ছে, আমাদের যেখানে স্টার্ট করার command টি দেওয়া রয়েছে সেখানে,
 
 ```sh
- ts-node-dev --respawn --transpile-only index.ts
+npx ts-node-dev --respawn --transpile-only index.ts
 ```
 
 Setup package manger
@@ -1306,6 +1306,8 @@ Object-Oriented Programming (OOP) in TypeScript follows the same principles as o
 
 Here's an introduction to OOP in TypeScript:
 
+## 4-3: How to Create class
+
 1. `Classes`: `Classes` are the fundamental building blocks of object-oriented programming in TypeScript. They serve as blueprints for creating objects that share common properties and behaviors. You can define a class using the class keyword. Here's an example:
 
 ```
@@ -1327,6 +1329,8 @@ class Person {
 
 In the above example, the `Person` class has two properties (`name` and `age`), a constructor to initialize those properties, and a `sayHello` method to display a greeting.
 
+## 4-3: How to Create object
+
 2. `Objects`: `Objects` are instances of classes. You can create an object by using the `new` keyword followed by the class name and any required arguments. Here's an example:
 
 ```
@@ -1336,6 +1340,8 @@ person1.sayHello(); // Output: Hello, my name is Alice and I'm 25 years old.
 ```
 
 The `person1` object is created from the `Person` class and can invoke its methods or access its properties.
+
+## 4-3: Inheritence
 
 3. `Inheritance`: In TypeScript, you can create class hierarchies using `inheritance`. A subclass can inherit properties and methods from a superclass, allowing for code reuse and specialization. The `extends` keyword is used to establish an `inheritance` relationship. Here's an example:
 
@@ -1383,3 +1389,70 @@ class Cat extends Animal {
 In this example, both `Dog` and `Cat` classes inherit the `makeSound` method from the Animal class but provide their own implementation. This allows you to treat objects of `Dog` and `Cat` as instances of the common `Animal` superclass while calling the `makeSound` method.
 
 These are some of the key concepts of OOP in TypeScript. By leveraging these principles, you can create well-structured and maintainable code that models real-world entities and promotes code reuse.
+
+## 4-4: Type Guards / Type Narrowing
+
+Type guards, also known as type narrowing, are a feature in TypeScript that allow you to narrow down the type of a variable within a conditional block based on certain conditions. This narrowing is done through runtime checks that refine the type of the variable.
+
+TypeScript uses type guards to help you write safer code by providing more specific type information. By narrowing down the type, you can access properties and methods that are specific to that particular type, without TypeScript raising any compilation errors.
+
+There are several ways to perform type narrowing in TypeScript:
+
+1. typeof type guards: You can use the typeof operator to narrow down the type based on the JavaScript runtime type of a value. For example:
+
+```
+function printLength(value: string | number) {
+  if (typeof value === 'string') {
+    console.log(value.length); // TypeScript knows `value` is a string
+  } else {
+    console.log('Not a string');
+  }
+}
+
+```
+
+2. `instanceof` type guards: The `instanceof` operator allows you to narrow down the type based on the class or interface a value was instantiated from. For example:
+
+```
+class Foo {
+  bar() {
+    console.log('Hello');
+  }
+}
+
+function doSomething(value: Foo | number) {
+  if (value instanceof Foo) {
+    value.bar(); // TypeScript knows `value` is an instance of `Foo`
+  } else {
+    console.log('Not an instance of Foo');
+  }
+}
+
+```
+
+3. `user-defined type guards`: You can create your own type guards by defining functions that return a boolean value based on specific type conditions. For example:
+
+```
+interface Square {
+  sideLength: number;
+}
+
+interface Circle {
+  radius: number;
+}
+
+function isSquare(shape: Square | Circle): shape is Square {
+  return (shape as Square).sideLength !== undefined;
+}
+
+function calculateArea(shape: Square | Circle) {
+  if (isSquare(shape)) {
+    console.log('Area of square:', shape.sideLength * shape.sideLength);
+  } else {
+    console.log('Area of circle:', Math.PI * shape.radius * shape.radius);
+  }
+}
+
+```
+
+These are just a few examples of how you can perform type narrowing using type guards in TypeScript. They help you write more robust code by leveraging the type system to catch potential errors and provide better code completion and static analysis.
