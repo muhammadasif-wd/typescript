@@ -1300,19 +1300,86 @@ Note: This explanation covers the basic concept of mapped types in TypeScript. T
 
 # Object-Oriented Programming in typescript
 
-## 3-1: Introduction to Object-Oriented Programming
+## 4-1: Introduction to Object-Oriented Programming
 
-Object-oriented programming (OOP) is a programming paradigm that organizes and structures code around objects, which are instances of classes. It provides a way to model real-world entities or concepts as software objects, allowing for a modular, reusable, and maintainable approach to software development.
+Object-Oriented Programming (OOP) in TypeScript follows the same principles as other object-oriented languages. TypeScript is a statically typed superset of JavaScript that adds type annotations and additional features to enhance the development experience. It brings OOP concepts and features to JavaScript, making it easier to build large-scale applications.
 
-At the core of OOP are four main principles: encapsulation, inheritance, polymorphism, and abstraction. These principles help in designing and implementing complex software systems efficiently.
+Here's an introduction to OOP in TypeScript:
 
-1. `Encapsulation`: Encapsulation is the practice of bundling related data and functions together into objects. An object encapsulates its internal state (data) and behavior (methods or functions) within a single entity. It also provides interfaces (public methods) for interacting with the object, while hiding the implementation details. This way, objects can ensure data integrity and protect it from unwanted modifications.
+1. `Classes`: `Classes` are the fundamental building blocks of object-oriented programming in TypeScript. They serve as blueprints for creating objects that share common properties and behaviors. You can define a class using the class keyword. Here's an example:
 
-2. `Inheritance`: Inheritance allows classes to inherit properties and behaviors from other classes. It enables the creation of a hierarchical relationship between classes, where a derived class (subclass) can inherit the characteristics of a base class (superclass). The subclass can extend or specialize the functionality of the superclass by adding new methods or overriding existing ones. Inheritance promotes code reuse and helps in organizing and managing related classes effectively.
+```
+class Person {
+  name: string;
+  age: number;
 
-3. `Polymorphism`: Polymorphism allows objects of different classes to be treated as objects of a common superclass. It enables the same method to be used with objects of different types, providing flexibility and modularity. Polymorphism is achieved through method overriding (redefining a method in a subclass) and method overloading (defining multiple methods with the same name but different parameters). It simplifies code maintenance and enables more generic programming.
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
 
-4. `Abstraction`: Abstraction focuses on representing essential features or behavior of an object while hiding unnecessary details. It allows developers to create abstract classes or interfaces that define common attributes and methods for a group of related objects. Concrete classes can then implement or inherit from these abstractions to provide specific implementations. Abstraction enables separation of concerns, promotes modularity, and facilitates future changes without affecting the overall system.
+  sayHello(): void {
+    console.log(`Hello, my name is ${this.name} and I'm ${this.age} years old.`);
+  }
+}
 
-In OOP, programs are typically structured using classes, which act as blueprints or templates for creating objects. A class defines the properties (attributes or fields) and behaviors (methods or functions) that objects of that class will possess. Objects are instances of classes that can interact with each other by invoking their methods or accessing their properties.
-OOP languages, such as Java, C++, Python, and many others, provide syntactic constructs and features to support these principles and facilitate object-oriented programming. By leveraging the power of OOP, developers can create modular, reusable, and scalable code, leading to more efficient software development and maintenance.
+```
+
+In the above example, the `Person` class has two properties (`name` and `age`), a constructor to initialize those properties, and a `sayHello` method to display a greeting.
+
+2. `Objects`: `Objects` are instances of classes. You can create an object by using the `new` keyword followed by the class name and any required arguments. Here's an example:
+
+```
+const person1 = new Person("Alice", 25);
+person1.sayHello(); // Output: Hello, my name is Alice and I'm 25 years old.
+
+```
+
+The `person1` object is created from the `Person` class and can invoke its methods or access its properties.
+
+3. `Inheritance`: In TypeScript, you can create class hierarchies using `inheritance`. A subclass can inherit properties and methods from a superclass, allowing for code reuse and specialization. The `extends` keyword is used to establish an `inheritance` relationship. Here's an example:
+
+```
+class Student extends Person {
+  grade: string;
+
+  constructor(name: string, age: number, grade: string) {
+    super(name, age);
+    this.grade = grade;
+  }
+
+  study(): void {
+    console.log(`${this.name} is studying in grade ${this.grade}.`);
+  }
+}
+
+```
+
+In the above example, the `Student` class extends the `Person` class, inheriting its properties and methods. It also introduces a new property (`grade`) and a `study` method specific to students.
+
+4. Polymorphism: Polymorphism allows objects of different classes to be treated as instances of a common superclass. TypeScript supports polymorphism through method overriding. Subclasses can override methods inherited from the superclass to provide their own implementation. Here's an example:
+
+```
+class Animal {
+  makeSound(): void {
+    console.log("The animal makes a sound.");
+  }
+}
+
+class Dog extends Animal {
+  makeSound(): void {
+    console.log("The dog barks.");
+  }
+}
+
+class Cat extends Animal {
+  makeSound(): void {
+    console.log("The cat meows.");
+  }
+}
+
+```
+
+In this example, both `Dog` and `Cat` classes inherit the `makeSound` method from the Animal class but provide their own implementation. This allows you to treat objects of `Dog` and `Cat` as instances of the common `Animal` superclass while calling the `makeSound` method.
+
+These are some of the key concepts of OOP in TypeScript. By leveraging these principles, you can create well-structured and maintainable code that models real-world entities and promotes code reuse.
