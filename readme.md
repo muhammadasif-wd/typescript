@@ -18,9 +18,13 @@ nvm installation:
 npm install -g nvm
 ```
 
-### How to change node version in your local compute
+### How to change node version in your local computer?
 
-nvm use node 19.8.2 ( type your version )
+```sh
+nvm use node 19.8.2
+```
+
+( type your version )
 
 ### Typescript file run local computer
 
@@ -30,7 +34,7 @@ nvm use node 19.8.2 ( type your version )
 
 ### Every time a file run updated
 
-- setup node package manager:
+setup node package manager:
 
 ```sh
  npm init -y
@@ -46,7 +50,7 @@ nvm use node 19.8.2 ( type your version )
 
 ### কিভাবে typescript এর ফাইল javascript এ complied না করে node এ চালাতে পারি ?
 
-- আমরা এক্ষেত্রে ব্যাবহার করতে পারিঃ node js এর একটি প্যাকেজ ম্যানেজার সেটি হচ্ছেঃ
+আমরা এক্ষেত্রে ব্যাবহার করতে পারিঃ node js এর একটি প্যাকেজ ম্যানেজার সেটি হচ্ছেঃ
 
 ```sh
  npm i ts-node-dev
@@ -58,19 +62,19 @@ nvm use node 19.8.2 ( type your version )
 npm i ts-node-dev --save-dev
 ```
 
-- এর পরের কাজ হচ্ছে, আমাদের যেখানে স্টার্ট করার command টি দেওয়া রয়েছে সেখানে,
+এর পরের কাজ হচ্ছে, আমাদের যেখানে স্টার্ট করার command টি দেওয়া রয়েছে সেখানে,
 
 ```sh
 ts-node-dev --respawn --transpile-only index.ts
 ```
 
-- setup node package manager:
+setup node package manager:
 
 ```sh
  npm init -y
 ```
 
-- Install & setup nodemon:
+Install & setup nodemon:
 
 ```sh
 npm i nodemon
@@ -82,7 +86,7 @@ npm i nodemon
 
 ### কিভাবে typescript এর ফাইল javascript এ complied না করে node এ চালাতে পারি ।
 
-- আমরা এক্ষেত্রে ব্যাবহার করতে পারিঃ node js এর একটি প্যাকেজ ম্যানেজার সেটি হচ্ছেঃ
+আমরা এক্ষেত্রে ব্যাবহার করতে পারিঃ node js এর একটি প্যাকেজ ম্যানেজার সেটি হচ্ছেঃ
 
 ```sh
  npm i ts-node-dev
@@ -100,7 +104,7 @@ or
  ts-node-dev --respawn --transpile-only index.ts
 ```
 
-- Setup package manger
+Setup package manger
 
 ```sh
 "start": "ts-node-dev --respawn --transpile-only server.ts”
@@ -110,8 +114,8 @@ or
 
 ### আমি কিভাবে আমার সব typescript এর ফাইল গুলো একটি ফোল্ডার এ রাখতে পারি…?
 
-- আমি যদি চাই আমার সুধু typescript এর ফাইল গুলো একটি folder থাকবে তাহলে আমরা tsconfig.json ফাইল এ জাব এর পর সার্চ করবো rootDir নামে অইখানে আপনি আপনার ফোল্ডার এর নামটি দিলেই হবে।
+আমি যদি চাই আমার সুধু typescript এর ফাইল গুলো একটি folder থাকবে তাহলে আমরা tsconfig.json ফাইল এ জাব এর পর সার্চ করবো rootDir নামে অইখানে আপনি আপনার ফোল্ডার এর নামটি দিলেই হবে।
 
 ### আমি কিভাবে আমার সব javascript এর ফাইল গুলো একটি ফোল্ডার এ রাখতে পারি…?
 
-- আমি যদি চাই আমার সুধু javscript এর ফাইল গুলো একটি folder থাকবে তাহলে আমরা tsconfig.json ফাইল এ জাব এর পর সার্চ করবো outDir নামে অইখানে আপনি আপনার ফোল্ডার এর নামটি দিলেই হবে।
+আমি যদি চাই আমার সুধু javscript এর ফাইল গুলো একটি folder থাকবে তাহলে আমরা tsconfig.json ফাইল এ জাব এর পর সার্চ করবো outDir নামে অইখানে আপনি আপনার ফোল্ডার এর নামটি দিলেই হবে।
