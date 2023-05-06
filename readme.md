@@ -1229,3 +1229,65 @@ type ModifiableProperties<T> = {
 In this example, the `ModifiableProperties` type is a mapped type that takes an object type `T`. It applies a certain modifier to all properties of `T` if they are of type `number`. The modifier adds a `unit` property to the number, making it a `number` with a unit.
 
 Overall, conditional types are a powerful feature of TypeScript that allow for the creation of complex types that depend on runtime conditions. They are commonly used in libraries and frameworks to create flexible and extensible code.Mapped type typescript
+
+## 3-10: Mapped types in TypeScript
+
+Mapped types in TypeScript allow you to create new types based on existing types by applying transformations to each property in the original type. They provide a way to generate new types based on the structure of existing types, making it easier to create variations or subsets of types.
+
+The syntax for defining a mapped type is as follows:
+
+```
+type MappedType = {
+  [Property in keyof OriginalType]: Transformation
+};
+
+```
+
+Here, `MappedType` is the name of the new type you're defining. Property represents each `property` in the `OriginalType`, and `Transformation` defines the type transformation that should be applied to each property.
+
+For example, let's say we have an interface `Person`:
+
+```
+interface Person {
+  name: string;
+  age: number;
+}
+
+```
+
+We can create a mapped type called `PartialPerson` that makes all properties of `Person` optional:
+
+```
+type PartialPerson = {
+  [Property in keyof Person]?: Person[Property];
+};
+
+```
+
+In this case, `PartialPerson` will have the same properties as `Person`, but each property will be optional. So we can do the following:
+
+```
+const person: PartialPerson = {
+  name: "John"
+};
+
+```
+
+Another useful feature of mapped types is the ability to create read-only or mutable versions of existing types:
+
+```
+type ReadonlyPerson = {
+  readonly [Property in keyof Person]: Person[Property];
+};
+
+type MutablePerson = {
+  -readonly [Property in keyof Person]: Person[Property];
+};
+
+```
+
+In the `ReadonlyPerson` type, all properties are made read-only, meaning you can't assign new values to them once they're initialized. On the other hand, the `MutablePerson` type removes the `readonly` modifier, allowing properties to be modified.
+
+Mapped types are versatile and can be used in various scenarios to manipulate and transform types based on existing ones. They provide a powerful way to generate new types dynamically, based on the structure of other types.
+
+Note: This explanation covers the basic concept of mapped types in TypeScript. The language evolves over time, so there may be additional features or changes introduced beyond my knowledge cutoff in September 2021. It's always a good idea to consult the official TypeScript documentation for the most up-to-date information.
