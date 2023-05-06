@@ -1291,3 +1291,5 @@ In the `ReadonlyPerson` type, all properties are made read-only, meaning you can
 Mapped types are versatile and can be used in various scenarios to manipulate and transform types based on existing ones. They provide a powerful way to generate new types dynamically, based on the structure of other types.
 
 Note: This explanation covers the basic concept of mapped types in TypeScript. The language evolves over time, so there may be additional features or changes introduced beyond my knowledge cutoff in September 2021. It's always a good idea to consult the official TypeScript documentation for the most up-to-date information.
+
+<h1 align="center">---END---</h1>
