@@ -1297,3 +1297,22 @@ Mapped types are versatile and can be used in various scenarios to manipulate an
 Note: This explanation covers the basic concept of mapped types in TypeScript. The language evolves over time, so there may be additional features or changes introduced beyond my knowledge cutoff in September 2021. It's always a good idea to consult the official TypeScript documentation for the most up-to-date information.
 
 <h1 align="center">-END-</h1>
+
+# Object-Oriented Programming in typescript
+
+## 3-1: Introduction to Object-Oriented Programming
+
+Object-oriented programming (OOP) is a programming paradigm that organizes and structures code around objects, which are instances of classes. It provides a way to model real-world entities or concepts as software objects, allowing for a modular, reusable, and maintainable approach to software development.
+
+At the core of OOP are four main principles: encapsulation, inheritance, polymorphism, and abstraction. These principles help in designing and implementing complex software systems efficiently.
+
+1. `Encapsulation`: Encapsulation is the practice of bundling related data and functions together into objects. An object encapsulates its internal state (data) and behavior (methods or functions) within a single entity. It also provides interfaces (public methods) for interacting with the object, while hiding the implementation details. This way, objects can ensure data integrity and protect it from unwanted modifications.
+
+2. `Inheritance`: Inheritance allows classes to inherit properties and behaviors from other classes. It enables the creation of a hierarchical relationship between classes, where a derived class (subclass) can inherit the characteristics of a base class (superclass). The subclass can extend or specialize the functionality of the superclass by adding new methods or overriding existing ones. Inheritance promotes code reuse and helps in organizing and managing related classes effectively.
+
+3. `Polymorphism`: Polymorphism allows objects of different classes to be treated as objects of a common superclass. It enables the same method to be used with objects of different types, providing flexibility and modularity. Polymorphism is achieved through method overriding (redefining a method in a subclass) and method overloading (defining multiple methods with the same name but different parameters). It simplifies code maintenance and enables more generic programming.
+
+4. `Abstraction`: Abstraction focuses on representing essential features or behavior of an object while hiding unnecessary details. It allows developers to create abstract classes or interfaces that define common attributes and methods for a group of related objects. Concrete classes can then implement or inherit from these abstractions to provide specific implementations. Abstraction enables separation of concerns, promotes modularity, and facilitates future changes without affecting the overall system.
+
+In OOP, programs are typically structured using classes, which act as blueprints or templates for creating objects. A class defines the properties (attributes or fields) and behaviors (methods or functions) that objects of that class will possess. Objects are instances of classes that can interact with each other by invoking their methods or accessing their properties.
+OOP languages, such as Java, C++, Python, and many others, provide syntactic constructs and features to support these principles and facilitate object-oriented programming. By leveraging the power of OOP, developers can create modular, reusable, and scalable code, leading to more efficient software development and maintenance.
