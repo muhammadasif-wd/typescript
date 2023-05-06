@@ -1,1 +1,0 @@
-# typescript-module-1

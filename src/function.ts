@@ -1,73 +1,60 @@
-// create a sum function
-console.log("run this file successfully");
+// //normal function
+// //default parameter
+// function add(num1: number, num2: number = 10): number {
+//   return num1 + num2;
+// }
 
+// add(30, 50);
 
-function add(num1: number, num2: number): number {
-    const sum = num1 + num2
-    console.log(sum);
-    return sum
-}
+// //spread opearator
 
-add(1, 5)
+// const myFriends = ["chandler", "joey", "ross"];
+// const newFriends = ["monica", "rachel", "pheobe"];
+// const myBestFriend = {
+//   fullName: "Abul Bashar",
+//   age: 24,
+// };
 
-const minus = (num1: number, num2: number): number => {
-    const minusResult = num1 + num2
-    console.log(minusResult);
-    return minusResult
-}
+// const [besfriend] = myFriends;
+// const { fullName: string } = myBestFriend;
 
-minus(34, 23)
+// console.log({ string });
 
+// myFriends.push(...newFriends);
+// // console.log(myFriends);
 
-// example array
+// //rest paaremeter
 
-const arr = [3, 5, 1, 4, 6, 2, 8, 11]
+// const greetFriends = (...friends: string[]): void =>
+//   friends.forEach((friend) => console.log(`Hi ${friend}`));
 
-const newArray = arr.map(elem => elem * elem)
+// greetFriends(
+//   "kashem",
+//   "hashem",
+//   "gashem",
+//   "lashem",
+//   "bangla bhai",
+//   "english bhai"
+// );
 
-console.log(newArray);
+// //array and object destructuring
 
-const person: {
-    name: string,
-    balance: number,
-    role: string
-    addBalance(money: number): void;
-} = {
-    name: 'Asif',
-    balance: 23,
-    role: "user",
-    addBalance(money: number) {
-        const myBalance = this.balance + money;
-        console.log(`My recent balance = ${myBalance}`);
-        return;
-    },
-}
+// const addArrow = (num1: number, num2: number): number => num1 + num2;
 
+// const arr = [1, 4, 5, 7];
 
+// const newArray = arr.map((elem: number) => elem * elem);
 
-console.log(person);
+// const person: {
+//   name: string;
+//   balance: number;
+//   addBalance(money: number): void;
+// } = {
+//   name: "Mezba",
+//   balance: 5,
+//   addBalance(money: number) {
+//     console.log(`My New Balance is ${this.balance + money}`);
+//   },
+// };
 
-
-// spread operators 
-const myFriends = ["a", "b", "c", "d"];
-const newFriends = ["f", "g"]
-myFriends.push(...newFriends)
-console.log(myFriends);
-
-
-// great friends
-// rest parameter
-
-const greatFriends = ((...friends: string[]): void => friends.forEach(friends => console.log(friends)))
-
-greatFriends("shanta", "sathi")
-
-
-// arrays and objects destructure...
-const myBestFriends = {
-    friendName: "ashik",
-    age: 34
-}
-const [bestFriends] = myFriends
-const { friendName: fullName, age } = myBestFriends
-console.log({ fullName }, age);
+// // person.addBalance(555);

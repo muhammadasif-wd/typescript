@@ -1,47 +1,15 @@
 "use strict";
-// create a sum function
-console.log("run this file successfully");
+//normal function
 function add(num1, num2) {
-    const sum = num1 + num2;
-    console.log(sum);
-    return sum;
+    return num1 + num2;
 }
-add(1, 5);
-const minus = (num1, num2) => {
-    const minusResult = num1 + num2;
-    console.log(minusResult);
-    return minusResult;
-};
-minus(34, 23);
-// example array
-const arr = [3, 5, 1, 4, 6, 2, 8, 11];
-const newArray = arr.map(elem => elem * elem);
-console.log(newArray);
+const addArrow = (num1, num2) => num1 + num2;
+const arr = [1, 4, 5, 7];
+const newArray = arr.map((elem) => elem * elem);
 const person = {
-    name: 'Asif',
-    balance: 23,
-    role: "user",
+    name: "Mezba",
+    balance: 5,
     addBalance(money) {
-        const myBalance = this.balance + money;
-        console.log(`My recent balance = ${myBalance}`);
-        return;
+        console.log(`My New Balance is ${this.balance + money}`);
     },
 };
-console.log(person);
-// spread operators 
-const myFriends = ["a", "b", "c", "d"];
-const newFriends = ["f", "g"];
-myFriends.push(...newFriends);
-console.log(myFriends);
-// great friends
-// rest parameter
-const greatFriends = ((...friends) => friends.forEach(friends => console.log(friends)));
-greatFriends("shanta", "sathi");
-// arrays and objects destructure...
-const myBestFriends = {
-    friendName: "ashik",
-    age: 34
-};
-const [bestFriends] = myFriends;
-const { friendName: fullName, age } = myBestFriends;
-console.log({ fullName }, age);

@@ -1,1 +1,1 @@
-const other: String = "Hello other file";
+// console.log("Hello");
