@@ -996,3 +996,236 @@ In this example, we are using the nullish coalescing operator to provide a defau
 ## Conclusion
 
 In this blog post, we discussed the ternary operator and the nullish coalescing operator in TypeScript. These operators can help us write more concise and readable code. The ternary operator allows us to write a shorthand if statement, and the nullish coalescing operator allows us to provide a default value for variables that are `null` or `undefined`.
+
+## 3-1: Type Assertion
+
+Type assertion is a way to tell the TypeScript compiler that a variable is of a specific type. It is like a type cast in other languages. There are two ways to do type assertion in TypeScript:
+
+- Using the `< >` syntax
+- Using the `as` keyword
+
+Type assertion is used when the developer knows more about the type of a value than TypeScript does. It can also be used to convert a value to a more specific type.
+
+Here's an example of using type assertion with the `< >` syntax:
+
+```
+let someValue: any = "this is a string";
+let strLength: number = (<string>someValue).length;
+
+```
+
+Here's an example of using type assertion with the `as` keyword:
+
+```
+let someValue: any = "this is a string";
+let strLength: number = (someValue as string).length;
+
+```
+
+Note that type assertion is different from type conversion. Type conversion is when a value is actually changed to a different type, whereas type assertion only tells TypeScript to treat the value as if it is a different type.
+
+## 3-2: Interface vs Type
+
+In TypeScript, both `interface` and `type` can be used to define object types. However, there are some differences between them.
+
+### Interface
+
+An interface is a way to define a contract for an object. It specifies the properties and their types that an object must have. Interfaces can also extend other interfaces.
+
+Here's an example of an interface for a `Person` object:
+
+```
+interface Person {
+  name: string;
+  age: number;
+}
+
+```
+
+### Type
+
+A type is similar to an interface, but it can also be used to define other types, such as primitives, unions, and intersections. Types can also be extended using intersection types.
+
+Here's an example of a type for a `Person` object:
+
+```
+type Person = {
+  name: string;
+  age: number;
+}
+
+```
+
+One advantage of using `type` is that it can be used with other types to create more complex types. For example, here's how you could use `type` to create a `User` type that extends the `Person` type:
+
+```
+type User = Person & {
+  email: string;
+}
+
+```
+
+Overall, both `interface` and `type` can be used to define object types in TypeScript. The choice between them depends on the specific use case and personal preference.
+
+## 3-3: Introduction of Generic in Type
+
+Generics are a way to create reusable code components that can work with different types. They allow for the creation of functions, classes, and interfaces that can work with a variety of types without being specific to one particular type.
+
+Here's an example of a generic function that takes an array of any type and returns an array of the same type:
+
+```
+function reverse<T>(arr: T[]): T[] {
+  return arr.reverse();
+}
+
+```
+
+In this example, `T` is a type variable that represents any type. The function takes an array of type `T` and returns an array of the same type.
+
+Generics can also be used with interfaces and classes. Here's an example of a generic interface:
+
+```
+interface Pair<T, U> {
+  first: T;
+  second: U;
+}
+
+```
+
+In this example, `Pair` is an interface with two type parameters, `T` and `U`. It specifies that any object that implements the interface must have a `first` property of type `T` and a `second` property of type `U`.
+
+Overall, generics are a powerful feature of TypeScript that allow for the creation of reusable code components that can work with different types. They are commonly used in libraries and frameworks to create flexible and extensible code.
+
+## 3-4: Introduction of Generic in Type
+
+Generics are a way to create reusable code components that can work with different types. They allow for the creation of functions, classes, and interfaces that can work with a variety of types without being specific to one particular type.
+
+Here's an example of a generic interface:
+
+```
+interface Pair<T, U> {
+  first: T;
+  second: U;
+}
+
+```
+
+In this example, `Pair` is an interface with two type parameters, `T` and `U`. It specifies that any object that implements the interface must have a `first` property of type `T` and a `second` property of type `U`.
+
+Overall, generics are a powerful feature of TypeScript that allow for the creation of reusable code components that can work with different types. They are commonly used in libraries and frameworks to create flexible and extensible code.
+
+## 3-5: Introduction of Generic in Type
+
+Generics are a way to create reusable code components that can work with different types. They allow for the creation of functions, classes, and interfaces that can work with a variety of types without being specific to one particular type.
+
+Here's an example of a generic function that takes an array of any type and returns an array of the same type:
+
+```
+function reverse<T>(arr: T[]): T[] {
+  return arr.reverse();
+}
+
+```
+
+In this example, `T` is a type variable that represents any type. The function takes an array of type `T` and returns an array of the same type.
+
+Overall, generics are a powerful feature of TypeScript that allow for the creation of reusable code components that can work with different types. They are commonly used in libraries and frameworks to create flexible and extensible code.
+
+## 3-6: Constraints in Generics
+
+Generic types can be constrained to a specific set of types using the `extends` keyword. This allows for the creation of flexible and reusable code components that can work with a subset of types.
+
+Here's an example of a generic function that takes an array of objects and returns an array of objects with a specific property:
+
+```
+function filterBy<T, K extends keyof T>(arr: T[], prop: K, value: T[K]): T[] {
+  return arr.filter(obj => obj[prop] === value);
+}
+
+```
+
+In this example, the generic type `K` is constrained to be a key of the type `T`. This allows us to access a specific property of the objects in the array using the `prop` parameter.
+
+Overall, constraints in generics are a powerful feature of TypeScript that allow for the creation of flexible and reusable code components that can work with a subset of types. They are commonly used in libraries and frameworks to create type-safe and efficient code.
+
+## \***\*3-7: Generic Constraints Using Key Of Part 1\*\***
+
+The `keyof` keyword in TypeScript is used to obtain the union type of all the property names of an object type. It allows for more precise type annotations and enables type-safe access to object properties without using string literals.
+
+For example, given the following type:
+
+```
+type Person = {
+  name: string;
+  age: number;
+  email: string;
+}
+
+```
+
+We can use the `keyof` keyword to obtain the union of all property names:
+
+```
+type PersonKeys = keyof Person; // "name" | "age" | "email"
+
+```
+
+This allows us to create more generic functions that work with any object type that has certain properties. For example, here's a function that takes an object and a property name, and returns the value of that property:
+
+```
+function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
+  return obj[key];
+}
+
+```
+
+In this example, `K` is constrained to be a key of the type `T`. This ensures that any property accessed using the `key` parameter actually exists on the object `obj`. The return type `T[K]` represents the type of the property accessed.
+
+Overall, the `keyof` keyword is a powerful feature of TypeScript that enables more precise type annotations and type-safe access to object properties.
+
+## 3-8: Asynchronous TypeScript
+
+TypeScript supports asynchronous programming using the `async` and `await` keywords. These keywords allow you to write asynchronous code that looks and behaves like synchronous code.
+
+Here's an example of an asynchronous function that fetches data from a server:
+
+```
+async function fetchData(url: string): Promise<string> {
+  const response = await fetch(url);
+  const data = await response.text();
+  return data;
+}
+
+```
+
+In this example, the `async` keyword is used to define an asynchronous function. The function uses the `await` keyword to wait for the results of the `fetch` function, which returns a `Promise` that resolves to a `Response` object. The `await` keyword is also used to wait for the results of the `text` method, which returns a `Promise` that resolves to a string.
+
+The `Promise` type is a built-in type in TypeScript that represents an asynchronous operation that may or may not resolve to a value. It is used extensively in asynchronous programming to handle the results of asynchronous operations.
+
+Overall, asynchronous programming is a powerful feature of TypeScript that enables you to write efficient and responsive code that can handle long-running tasks without blocking the main thread. It is commonly used in web development to fetch data from servers, handle user input, and perform other tasks that require non-blocking I/O operations.
+
+## 3-9: Conditional Types
+
+Conditional types in TypeScript allow for the creation of types that depend on other types. They are useful for creating complex types that depend on runtime conditions.
+
+Here's an example of a conditional type that returns a different type based on whether a value is an array or not:
+
+```
+type ArrayOrNot<T> = T extends any[] ? T : T[];
+
+```
+
+In this example, the `ArrayOrNot` type is a conditional type that takes a type parameter `T`. It uses the `extends` keyword to check if `T` is an array type. If it is, it returns `T`. If it isn't, it returns an array containing `T`.
+
+Conditional types can also be used with mapped types to create more complex types that depend on runtime conditions. Here's an example of a mapped type that applies a certain modifier to all properties of an object type if they are of a certain type:
+
+```
+type ModifiableProperties<T> = {
+  [K in keyof T]: T[K] extends number ? T[K] & {unit: string} : T[K];
+}
+
+```
+
+In this example, the `ModifiableProperties` type is a mapped type that takes an object type `T`. It applies a certain modifier to all properties of `T` if they are of type `number`. The modifier adds a `unit` property to the number, making it a `number` with a unit.
+
+Overall, conditional types are a powerful feature of TypeScript that allow for the creation of complex types that depend on runtime conditions. They are commonly used in libraries and frameworks to create flexible and extensible code.Mapped type typescript
