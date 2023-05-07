@@ -1363,6 +1363,8 @@ class Student extends Person {
 
 In the above example, the `Student` class extends the `Person` class, inheriting its properties and methods. It also introduces a new property (`grade`) and a `study` method specific to students.
 
+## 4-8: Polymorphism
+
 4. Polymorphism: Polymorphism allows objects of different classes to be treated as instances of a common superclass. TypeScript supports polymorphism through method overriding. Subclasses can override methods inherited from the superclass to provide their own implementation. Here's an example:
 
 ```
@@ -1501,3 +1503,140 @@ In the example above, the `Person` class has a private property `\_name`. It als
 By using getters and setters, you can perform additional operations or validations before getting or setting the value of a property. For example, you could check if the provided name is valid or trigger certain actions when the property is accessed or modified.
 
 Note: It's a convention in TypeScript to prefix private properties with an underscore, which differentiates them from the corresponding getters and setters.
+
+## 4-6: Static in Class typescript
+
+In TypeScript, static members in a class work similarly to how they do in other object-oriented languages like Java or C#. Here's how you can use static members in TypeScript:
+
+1. Static properties: Static properties are declared using the "static" keyword and are shared across all instances of the class. They are accessed using the class name itself, without the need for an instance. Here's an example:
+
+```
+class MyClass {
+  static count: number = 0;
+
+  constructor() {
+    MyClass.count++;
+  }
+
+  static getCount(): number {
+    return MyClass.count;
+  }
+}
+
+```
+
+In the above example, the static property `count` is incremented every time a new instance of `MyClass` is created. The static method `getCount()` can be called directly on the `class` to retrieve the current count value.
+
+2. Static methods: Static methods are declared using the "static" keyword and can be called on the class itself without creating an instance. They can only access other static members of the class. Here's an example:
+
+```
+class MathUtils {
+  static add(a: number, b: number): number {
+    return a + b;
+  }
+}
+
+```
+
+In the above example, the `add()` method is a static method that can be called using `MathUtils.add(3, 5)` without creating an instance of the `MathUtils` class.
+
+It's important to note that static members are associated with the class itself and not with individual instances of the class. They are initialized only once when the class is loaded, and changes to their values are reflected across all instances and accessed directly on the class name.
+
+## 4-9: Abstraction typescript
+
+In TypeScript, abstraction refers to the concept of creating abstract classes or interfaces that define the common structure and behavior of related objects or classes. It allows you to define a blueprint for classes to follow without specifying the implementation details. Abstraction helps in achieving code reusability, modularity, and maintainability.
+
+There are two primary ways to achieve abstraction in TypeScript:
+
+1. Abstract Classes: An abstract class is a base class that cannot be instantiated directly. It serves as a blueprint for derived classes, which inherit its properties and methods. Abstract classes can contain both concrete (implemented) and abstract (unimplemented) methods. Abstract methods are declared but do not provide an implementation within the abstract class. Instead, derived classes must implement these abstract methods. Here's an example:
+
+```
+abstract class Animal {
+  abstract makeSound(): void; // Abstract method
+
+  move(): void {
+    console.log('Moving...');
+  }
+}
+
+class Dog extends Animal {
+  makeSound(): void {
+    console.log('Woof!');
+  }
+}
+
+const dog = new Dog();
+dog.makeSound(); // Output: Woof!
+dog.move(); // Output: Moving...
+
+```
+
+2. Interfaces: Interfaces in TypeScript define contracts for objects to follow. They describe the structure and behavior of an object without providing any implementation details. By implementing an interface, a class must adhere to the interface's structure. Here's an example:
+
+```
+interface Animal {
+  makeSound(): void;
+  move(): void;
+}
+
+class Dog implements Animal {
+  makeSound(): void {
+    console.log('Woof!');
+  }
+
+  move(): void {
+    console.log('Moving...');
+  }
+}
+
+const dog: Animal = new Dog();
+dog.makeSound(); // Output: Woof!
+dog.move(); // Output: Moving...
+
+```
+
+By using abstract classes and interfaces, you can achieve abstraction in TypeScript and define common contracts or blueprints for classes to follow. This promotes code organization, extensibility, and flexibility in your TypeScript projects.
+
+## 4-10: Typescript Encapsulation
+
+Encapsulation is a concept in object-oriented programming that involves bundling data and the methods that operate on that data into a single unit called a class. TypeScript, being an object-oriented programming language, supports encapsulation.
+
+In TypeScript, encapsulation is achieved through the use of access modifiers, which control the visibility and accessibility of class members (properties and methods). There are three access modifiers available in TypeScript:
+
+1. Public: The public access modifier allows class members to be accessed from anywhere, both within the class and from external code.
+
+2. Private: The private access modifier restricts the access of class members to within the class that defines them. They cannot be accessed from outside the class.
+
+3. Protected: The protected access modifier allows class members to be accessed within the class that defines them and in its subclasses. They cannot be accessed from outside the class hierarchy.
+
+Here's an example that demonstrates encapsulation in TypeScript:
+
+```
+class Car {
+  private brand: string;
+  private speed: number;
+
+  constructor(brand: string) {
+    this.brand = brand;
+    this.speed = 0;
+  }
+
+  accelerate(speed: number): void {
+    this.speed += speed;
+  }
+
+  getSpeed(): number {
+    return this.speed;
+  }
+}
+
+const myCar = new Car('Tesla');
+myCar.accelerate(50);
+console.log(myCar.getSpeed()); // Output: 50
+// myCar.speed; // Error: Property 'speed' is private and only accessible within class 'Car'
+
+```
+
+In the example above, the `brand` and `speed` properties of the `Car` class are marked as private. They can only be accessed and modified within the class itself. The `accelerate` method modifies the `speed` property, and the `getSpeed` method allows external code to access the current speed of the car.
+
+By encapsulating the properties and providing controlled access through methods, encapsulation helps maintain data integrity and provides a level of abstraction that allows for better code organization and maintenance.
