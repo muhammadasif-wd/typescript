@@ -1456,3 +1456,48 @@ function calculateArea(shape: Square | Circle) {
 ```
 
 These are just a few examples of how you can perform type narrowing using type guards in TypeScript. They help you write more robust code by leveraging the type system to catch potential errors and provide better code completion and static analysis.
+
+## 4-5: Getters and Setters in Typescript
+
+In TypeScript, getters and setters are used to define special methods that allow you to access and modify the values of an object's properties. They provide a way to control how properties are accessed and updated, and they can be helpful for maintaining data integrity and adding additional logic.
+
+Here's an example of how to define getters and setters in TypeScript:
+
+```
+class Person {
+  private _name: string;
+
+  constructor(name: string) {
+    this._name = name;
+  }
+
+  // Getter
+  get name(): string {
+    return this._name;
+  }
+
+  // Setter
+  set name(newName: string) {
+    this._name = newName;
+  }
+}
+
+// Creating an instance of Person
+const person = new Person("John");
+
+// Accessing the property using the getter
+console.log(person.name); // Output: John
+
+// Updating the property using the setter
+person.name = "Jane";
+
+// Accessing the property again
+console.log(person.name); // Output: Jane
+
+```
+
+In the example above, the `Person` class has a private property `\_name`. It also has a `getter` `name()` and a ` setter`` name(newName: string) `. The getter returns the value of the `\_name` property, and the setter allows you to update the value of `\_name`.
+
+By using getters and setters, you can perform additional operations or validations before getting or setting the value of a property. For example, you could check if the provided name is valid or trigger certain actions when the property is accessed or modified.
+
+Note: It's a convention in TypeScript to prefix private properties with an underscore, which differentiates them from the corresponding getters and setters.
