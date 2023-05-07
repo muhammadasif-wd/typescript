@@ -1,154 +1,63 @@
 ## 2-1 :Installation typescript , nvm & ts-node-dev
 
-Type Script installation:
-
-```sh
-npm install typescript
-```
-
-Global installation:
-
-```sh
-sh npm install -g typescript
-```
-
-nvm installation:
-
-```sh
-npm install -g nvm
-```
-
-### How to change node version in your local computer?
-
-```sh
-nvm use node 19.8.2
-```
-
-( type your version )
-
-### Typescript file run local computer
-
-```sh
- tsc index.js
-```
-
-### Every time a file run updated
-
-setup node package manager:
-
-```sh
- npm init -y
-```
-
-```sh
- npm i nodemon
-```
-
-```sh
-“start”: “nodemon index.js”
-```
-
-### কিভাবে typescript এর ফাইল javascript এ complied না করে node এ চালাতে পারি ?
-
-আমরা এক্ষেত্রে ব্যাবহার করতে পারিঃ node js এর একটি প্যাকেজ ম্যানেজার সেটি হচ্ছেঃ
-
-```sh
- npm i ts-node-dev
-```
-
-    or
-
-```sh
-npm i ts-node-dev --save-dev
-```
-
-এর পরের কাজ হচ্ছে, আমাদের যেখানে স্টার্ট করার command টি দেওয়া রয়েছে সেখানে,
-
-```sh
-ts-node-dev --respawn --transpile-only index.ts
-```
-
-setup node package manager:
-
-```sh
- npm init -y
-```
-
-Install & setup nodemon:
-
-```sh
-npm i nodemon
-```
-
-```sh
-“start”: “nodemon index.js”
-```
-
-### কিভাবে typescript এর ফাইল javascript এ complied না করে node এ চালাতে পারি ।
-
-আমরা এক্ষেত্রে ব্যাবহার করতে পারিঃ node js এর একটি প্যাকেজ ম্যানেজার সেটি হচ্ছেঃ
-
-```sh
- npm i ts-node-dev
-```
-
-or
-
-```sh
- npm i ts-node-dev --save-dev
-```
-
-এর পরের কাজ হচ্ছে, আমাদের যেখানে স্টার্ট করার command টি দেওয়া রয়েছে সেখানে,
-
-```sh
-npx ts-node-dev --respawn --transpile-only index.ts
-```
-
-Setup package manger
-
-```sh
-"start": "ts-node-dev --respawn --transpile-only server.ts”
-```
-
-এটাকে রিপ্লেছ করে দিলেই হবে।
-
-### আমি কিভাবে আমার সব typescript এর ফাইল গুলো একটি ফোল্ডার এ রাখতে পারি…?
-
-আমি যদি চাই আমার সুধু typescript এর ফাইল গুলো একটি folder থাকবে তাহলে আমরা tsconfig.json ফাইল এ জাব এর পর সার্চ করবো rootDir নামে অইখানে আপনি আপনার ফোল্ডার এর নামটি দিলেই হবে।
-
-### আমি কিভাবে আমার সব javascript এর ফাইল গুলো একটি ফোল্ডার এ রাখতে পারি…?
-
-আমি যদি চাই আমার সুধু javscript এর ফাইল গুলো একটি folder থাকবে তাহলে আমরা tsconfig.json ফাইল এ জাব এর পর সার্চ করবো outDir নামে অইখানে আপনি আপনার ফোল্ডার এর নামটি দিলেই হবে।
-
-# TypeScript: Installation and Best Practices
-
-## Introduction
-
-TypeScript is a popular open-source programming language that is a superset of JavaScript. It adds optional static typing, classes, interfaces, and other features that make it easier to write and maintain complex applications. In this blog post, we will discuss the installation process of TypeScript and some best practices to follow while using it.
-
-## Installation
+## Installation & setup typescript
 
 There are multiple ways to install TypeScript, and we will discuss the three most popular methods.
 
-### Method 1: Local Installation
+### Method 1: Init package.json
 
-To install TypeScript locally, we need to run the following command in our project directory:
+```
+npm init -y
+
+```
+
+### Method 2: Typescript install
 
 ```
 npm i typescript
 
 ```
 
-### Method 2: Global Installation
-
-To install TypeScript globally, we need to run the following command:
+### Method 3: Init Typescript Config
 
 ```
-npm i -g typescript
+tsc --init
 
 ```
 
-### Method 3: Using nvm
+### Method 4: TS Node DEV
+
+```sh
+ npm i ts-node-dev
+```
+
+### Method 5: Seup ts node dev
+
+```sh
+'start': 'ts-node-dev --respawn --transpile-only server.ts'
+```
+
+### Method 6: Run ts node dev
+
+```sh
+npx ts-node-dev --respawn --transpile-only src
+```
+
+### Method 7: Setup Root Directory in typescript json.
+
+```
+"rootDir": "./src"
+
+```
+
+### Method 8: Setup Out Directory in typescript json.
+
+```
+"outDir": "./dist"
+
+```
+
+### How to install nvm?
 
 nvm (Node Version Manager) is a tool that allows us to switch between different versions of Node.js. To install nvm, we need to run the following command:
 
