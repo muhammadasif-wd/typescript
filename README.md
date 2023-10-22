@@ -1,23 +1,106 @@
-1. Check node install or version. 
+To create a Markdown document outlining the steps you mentioned, you can use the following template:
 
-2. If you manage the node version to install nvm. Already installed, then check the version. 
+```markdown
+# Setting up Node.js and TypeScript Environment
 
-3. version switch => (nvm use version) 
+## Check Node.js Installation and Version
 
-4. install typescript global or project. 
+To check if Node.js is installed, open your terminal and run:
 
-5. version check ( tsc --v) 
+```bash
+node -v
+```
 
-6. type script file js convert to use this command ( tsc ./filename) 
+If Node.js is not installed, or you need to manage different Node.js versions, consider using [nvm](https://github.com/nvm-sh/nvm).
 
-7. If you install the typescript config file to use this command ( tsc --init) 
+To check the version of Node.js installed:
 
-8. Install package .json then use this command (npm init -y) 
+```bash
+node -v
+```
 
-9. Install nodemon for running code. ( npm i nodemon or npm i -g nodemon)  
+## Install TypeScript Globally or for Your Project
 
-10. if you compile for ts to js then use this package for easy and simple (ts-node-dev) 
+If you haven't already installed TypeScript globally, you can do so with:
 
-11.  change your rootDir to search just rootDir and change ( "./src"). 
+```bash
+npm install -g typescript
+```
 
-12. and you change outDir to search just outDir and change ("./dist") 
+To check the TypeScript version:
+
+```bash
+tsc --version
+```
+
+If you prefer to install TypeScript locally within your project:
+
+```bash
+npm install typescript --save-dev
+```
+
+## Compiling TypeScript to JavaScript
+
+To compile a TypeScript file to JavaScript, use the following command:
+
+```bash
+tsc ./filename.ts
+```
+
+## Create a TypeScript Configuration File
+
+To generate a TypeScript configuration file (tsconfig.json) for your project:
+
+```bash
+tsc --init
+```
+
+This command will create a `tsconfig.json` file that you can customize to configure your TypeScript project.
+
+## Initialize Your Project with a `package.json` File
+
+If you don't have a `package.json` file, you can create one quickly with default settings using:
+
+```bash
+npm init -y
+```
+
+## Install Nodemon for Running Code
+
+Nodemon is a utility that will monitor for changes in your source code and automatically restart your server. You can install it with:
+
+```bash
+npm install nodemon --save-dev
+```
+
+## Use ts-node-dev for Compiling TypeScript
+
+To compile and run TypeScript files easily during development, you can use `ts-node-dev`. First, install it with:
+
+```bash
+npm install ts-node-dev --save-dev
+```
+
+## Configure `tsconfig.json` for Development
+
+To configure your `tsconfig.json` for development, change the `rootDir` and `outDir` settings to point to your source and output directories. Here's an example:
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    // ... other options ...
+  }
+  // ... other configuration ...
+}
+```
+
+Now, your TypeScript files in the `src` directory will be compiled to JavaScript in the `dist` directory.
+
+This Markdown document provides an overview of setting up a Node.js and TypeScript environment, installing dependencies, and configuring your project for development.
+```
+
+You can customize this document as needed and use it as a reference for setting up your Node.js and TypeScript environment.
