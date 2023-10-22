@@ -1,4 +1,4 @@
-# Typescript installation and ready process for start a new project
+# Setting Up a New TypeScript Project
 
 This guide will walk you through the process of setting up TypeScript for a new project. It covers TypeScript installation, creating a basic project structure, running TypeScript code, and configuring your development environment.
 
