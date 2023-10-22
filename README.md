@@ -1,114 +1,41 @@
-# Setting Up a New TypeScript Project
+# TypeScript Basic Types (Primitive Types)
 
-This guide will walk you through the process of setting up TypeScript for a new project. It covers TypeScript installation, creating a basic project structure, running TypeScript code, and configuring your development environment.
+TypeScript provides a range of primitive types to represent fundamental data values. These types are crucial for defining variables, functions, and data structures within your TypeScript code. It's essential to understand the distinction between implicit and explicit typing in TypeScript.
 
-## 1. Installing Node.js
+## Implicit Typing
 
-First, ensure you have Node.js installed on your system. You can download it from the official website [Node.js](https://nodejs.org/). Installing Node.js will also include npm, the Node.js package manager.
+**Implicit typing** is a TypeScript feature that automatically infers the type of a variable based on its initial value or usage in the code. In other words, TypeScript can determine the variable's type without the need for explicit type annotations. For example, when you declare a variable and assign it a value, TypeScript will analyze the value to determine its type.
 
-Verify the installation by running the following commands in your terminal:
-
-```bash
-node -v
-npm -v
+```typescript
+let x = 42; // TypeScript infers 'x' as a number
+let name = "John"; // TypeScript infers 'name' as a string
 ```
 
-If both commands display version numbers, Node.js and npm are successfully installed.
+Implicit typing is a powerful feature that simplifies code while still providing type safety.
 
-## 2. Installing TypeScript
+## Explicit Types
 
-To install TypeScript globally, run:
+**Explicit types** are when we intentionally provide the type using a special TypeScript syntax. This is particularly useful in scenarios where implicit typing might not provide the desired type or where you want to add clarity to your code. You explicitly specify the type of a variable, parameter, or return value using a colon `:` followed by the type.
 
-```bash
-npm install -g typescript
+```typescript
+let age: number = 30; // 'age' explicitly defined as a number
+let greeting: string = "Hello, TypeScript!"; // 'greeting' explicitly defined as a string
 ```
 
-This makes the `tsc` (TypeScript Compiler) command available globally.
+Explicit types are valuable when you want to enforce specific types or when TypeScript's inference isn't clear enough for your needs. They also improve code readability and maintainability.
 
-## 3. Creating a Project Directory
+## Available Primitive Types
 
-Create a directory for your new TypeScript project:
+Some of the commonly used primitive types in TypeScript include:
 
-```bash
-mkdir my-typescript-project
-cd my-typescript-project
-```
+- **number:** Represents numeric values, including integers and floating-point numbers.
+- **string:** Represents text values.
+- **boolean:** Represents true or false values.
+- **null and undefined:** Represents the absence of a value. Variables can have these types or values.
+- **void:** Typically used as the return type for functions that don't return a value.
+- **symbol:** Represents a unique, immutable value primarily used as object property keys.
+- **bigint:** Represents large integers (introduced in ECMAScript 2020).
 
-## 4. Initializing a New npm Project
+Understanding these basic types and when to use implicit or explicit typing is fundamental for effective TypeScript development.
 
-Initialize a new npm project. This command will create a `package.json` file with default settings:
-
-```bash
-npm init -y
-```
-
-## 5. Installing Development Dependencies
-
-For development purposes, install TypeScript as a development dependency:
-
-```bash
-npm install typescript --save-dev
-```
-
-Install [ts-node](https://www.npmjs.com/package/ts-node) for running TypeScript code easily:
-
-```bash
-npm install ts-node --save-dev
-```
-
-## 6. Creating a Basic Project Structure
-
-Create a basic project structure with a source directory (e.g., `src`) and an output directory (e.g., `dist`).
-
-```bash
-mkdir src
-mkdir dist
-```
-
-## 7. Setting Up TypeScript Configuration
-
-Generate a TypeScript configuration file:
-
-```bash
-npx tsc --init
-```
-
-This creates a `tsconfig.json` file. Configure the `tsconfig.json` file to match your project needs. Ensure that the `rootDir` points to your source directory and the `outDir` to your output directory. Example configuration:
-
-```json
-{
-  "compilerOptions": {
-    "target": "ES6",
-    "module": "commonjs",
-    "outDir": "./dist",
-    "rootDir": "./src",
-    // ... other options ...
-  }
-}
-```
-
-## 8. Writing TypeScript Code
-
-Now, you can start writing TypeScript code in the `src` directory. For example, create a file named `app.ts` and write some TypeScript code.
-
-## 9. Running TypeScript Code
-
-To run your TypeScript code during development, use `ts-node`:
-
-```bash
-npx ts-node src/app.ts
-```
-
-## 10. Building and Compiling TypeScript
-
-When you're ready to compile your TypeScript code to JavaScript, use the TypeScript Compiler (`tsc`):
-
-```bash
-npx tsc
-```
-
-This will generate JavaScript files in the `dist` directory, based on your `tsconfig.json` configuration.
-
-With these steps completed, your TypeScript environment is set up, and you can start developing your new project. Simply create your TypeScript files in the `src` directory, use `ts-node` for development, and compile your code to JavaScript with `tsc` when you're ready to deploy.
-
-Your project structure and development environment are now ready for your TypeScript project.
+Remember that as your TypeScript projects grow, you'll also work with more complex types, such as arrays, objects, and custom-defined types, to represent structured data and maintain code organization and clarity.
