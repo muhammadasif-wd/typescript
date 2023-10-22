@@ -1,106 +1,114 @@
-To create a Markdown document outlining the steps you mentioned, you can use the following template:
+# Typescript installation and ready process for start a new project
 
-```markdown
-# Setting up Node.js and TypeScript Environment
+This guide will walk you through the process of setting up TypeScript for a new project. It covers TypeScript installation, creating a basic project structure, running TypeScript code, and configuring your development environment.
 
-## Check Node.js Installation and Version
+## 1. Installing Node.js
 
-To check if Node.js is installed, open your terminal and run:
+First, ensure you have Node.js installed on your system. You can download it from the official website [Node.js](https://nodejs.org/). Installing Node.js will also include npm, the Node.js package manager.
 
-```bash
-node -v
-```
-
-If Node.js is not installed, or you need to manage different Node.js versions, consider using [nvm](https://github.com/nvm-sh/nvm).
-
-To check the version of Node.js installed:
+Verify the installation by running the following commands in your terminal:
 
 ```bash
 node -v
+npm -v
 ```
 
-## Install TypeScript Globally or for Your Project
+If both commands display version numbers, Node.js and npm are successfully installed.
 
-If you haven't already installed TypeScript globally, you can do so with:
+## 2. Installing TypeScript
+
+To install TypeScript globally, run:
 
 ```bash
 npm install -g typescript
 ```
 
-To check the TypeScript version:
+This makes the `tsc` (TypeScript Compiler) command available globally.
+
+## 3. Creating a Project Directory
+
+Create a directory for your new TypeScript project:
 
 ```bash
-tsc --version
+mkdir my-typescript-project
+cd my-typescript-project
 ```
 
-If you prefer to install TypeScript locally within your project:
+## 4. Initializing a New npm Project
 
-```bash
-npm install typescript --save-dev
-```
-
-## Compiling TypeScript to JavaScript
-
-To compile a TypeScript file to JavaScript, use the following command:
-
-```bash
-tsc ./filename.ts
-```
-
-## Create a TypeScript Configuration File
-
-To generate a TypeScript configuration file (tsconfig.json) for your project:
-
-```bash
-tsc --init
-```
-
-This command will create a `tsconfig.json` file that you can customize to configure your TypeScript project.
-
-## Initialize Your Project with a `package.json` File
-
-If you don't have a `package.json` file, you can create one quickly with default settings using:
+Initialize a new npm project. This command will create a `package.json` file with default settings:
 
 ```bash
 npm init -y
 ```
 
-## Install Nodemon for Running Code
+## 5. Installing Development Dependencies
 
-Nodemon is a utility that will monitor for changes in your source code and automatically restart your server. You can install it with:
-
-```bash
-npm install nodemon --save-dev
-```
-
-## Use ts-node-dev for Compiling TypeScript
-
-To compile and run TypeScript files easily during development, you can use `ts-node-dev`. First, install it with:
+For development purposes, install TypeScript as a development dependency:
 
 ```bash
-npm install ts-node-dev --save-dev
+npm install typescript --save-dev
 ```
 
-## Configure `tsconfig.json` for Development
+Install [ts-node](https://www.npmjs.com/package/ts-node) for running TypeScript code easily:
 
-To configure your `tsconfig.json` for development, change the `rootDir` and `outDir` settings to point to your source and output directories. Here's an example:
+```bash
+npm install ts-node --save-dev
+```
+
+## 6. Creating a Basic Project Structure
+
+Create a basic project structure with a source directory (e.g., `src`) and an output directory (e.g., `dist`).
+
+```bash
+mkdir src
+mkdir dist
+```
+
+## 7. Setting Up TypeScript Configuration
+
+Generate a TypeScript configuration file:
+
+```bash
+npx tsc --init
+```
+
+This creates a `tsconfig.json` file. Configure the `tsconfig.json` file to match your project needs. Ensure that the `rootDir` points to your source directory and the `outDir` to your output directory. Example configuration:
 
 ```json
 {
   "compilerOptions": {
     "target": "ES6",
     "module": "commonjs",
-    "rootDir": "./src",
     "outDir": "./dist",
+    "rootDir": "./src",
     // ... other options ...
   }
-  // ... other configuration ...
 }
 ```
 
-Now, your TypeScript files in the `src` directory will be compiled to JavaScript in the `dist` directory.
+## 8. Writing TypeScript Code
 
-This Markdown document provides an overview of setting up a Node.js and TypeScript environment, installing dependencies, and configuring your project for development.
+Now, you can start writing TypeScript code in the `src` directory. For example, create a file named `app.ts` and write some TypeScript code.
+
+## 9. Running TypeScript Code
+
+To run your TypeScript code during development, use `ts-node`:
+
+```bash
+npx ts-node src/app.ts
 ```
 
-You can customize this document as needed and use it as a reference for setting up your Node.js and TypeScript environment.
+## 10. Building and Compiling TypeScript
+
+When you're ready to compile your TypeScript code to JavaScript, use the TypeScript Compiler (`tsc`):
+
+```bash
+npx tsc
+```
+
+This will generate JavaScript files in the `dist` directory, based on your `tsconfig.json` configuration.
+
+With these steps completed, your TypeScript environment is set up, and you can start developing your new project. Simply create your TypeScript files in the `src` directory, use `ts-node` for development, and compile your code to JavaScript with `tsc` when you're ready to deploy.
+
+Your project structure and development environment are now ready for your TypeScript project.
