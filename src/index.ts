@@ -1,2 +1,9 @@
-const user: string = "A SI F"
-console.log('user :>> ', user); 
+// let course = undefined;
+// course = "jj";
+// console.log(course);
+// //Primitive Types
+// //string
+// //number
+// //boolean
+// //null
+// //undefined
